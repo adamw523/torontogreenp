@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Style id="gpNormal">
+    <IconStyle>
+      <Icon>
+        <href>http://parking.greenp.com/images/map/gp_placemark.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="gpHigh">
+    <IconStyle>
+      <Icon>
+        <href>http://parking.greenp.com/images/map/gp_placemark_hover.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <StyleMap id="gpStyleMap">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#gpNormal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#gpHigh</styleUrl>
+    </Pair>
+  </StyleMap>
+  {% for carpark in carparks %}
+    <Placemark>
+    <name>{{ carpark.title }}</name>
+    <description>
+      <![CDATA[
+      {{ carpark.street_address }}<br/>
+      {{ carpark.rate }}<br/>
+      {{ carpark.capacity }}<br/>
+      {{ carpark.rate_details }}<br/>
+      last update: {{ carpark.date_scraped }}<br/>
+      <a href="{{ carpark.url }}">More Info</a><br/>
+      ]]>
+    </description>
+    <Point><coordinates>{{ carpark.lng }},{{ carpark.lat }}</coordinates></Point>
+    <styleUrl>#gpStyleMap</styleUrl>
+    </Placemark>
+  {% endfor %}
+</Document>
+</kml>
