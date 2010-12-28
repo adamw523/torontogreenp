@@ -27,7 +27,7 @@
   </StyleMap>
   {% for carpark in carparks %}
     <Placemark>
-    <name>{{ carpark.title }}</name>
+    <name>{{ carpark.street_address }}</name>
     <description>
       <![CDATA[
       {{ carpark.street_address }}<br/>
@@ -35,7 +35,7 @@
       {{ carpark.capacity }}<br/>
       {{ carpark.rate_details }}<br/>
       last update: {{ carpark.date_scraped }}<br/>
-      <a href="{{ carpark.url }}">More Info</a><br/>
+      <a href="{{ carpark.url }}">More Info {{ carpark.title }}</a><br/>
       ]]>
     </description>
     <Point><coordinates>{{ carpark.lng }},{{ carpark.lat }}</coordinates></Point>
