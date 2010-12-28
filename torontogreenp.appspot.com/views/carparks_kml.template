@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
+  <name>Green P Locations in Toronto</name>
+    <description>A list of Green P locations in Toronto.  Click on the Green P icons for parking rates and other details</description>
   <Style id="gpNormal">
     <IconStyle>
       <Icon>
