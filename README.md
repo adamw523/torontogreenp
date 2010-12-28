@@ -6,4 +6,4 @@ Data scraped by [ScraperWiki](http://scraperwiki.com/scrapers/greenp_carparks)
 
 Type "http://bit.ly/greenpTO" into the search bar on [Google Maps](http://maps.google.com) and click "Search Maps"
 
-![Example Image](http://i.imgur.com/SBKqZ.png)
+![Example Image](http://i.imgur.com/xVsYB.png)
