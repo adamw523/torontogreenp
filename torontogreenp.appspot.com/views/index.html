@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+  hi
+</body>
+
+<script>
+function load() {
+      if (GBrowserIsCompatible()) {
+
+        var map = new GMap2(document.getElementById("map"));
+
+        map.addControl(new GLargeMapControl());
+        map.addControl(new GMapTypeControl());
+
+        map.setCenter(new GLatLng(40.743884, -73.974666), 13);
+
+        var kmlUrl = "http://YOUR-SERVER/listings-as-kml.php?v=" 
++ Math.round(Math.random() * 10000000000);
+
+        var kml = new GGeoXml(kmlUrl); 
+        map.addOverlay(kml);
+      }
+    }
+</script>
