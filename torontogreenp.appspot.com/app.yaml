@@ -4,6 +4,17 @@ runtime: python
 api_version: 1
 
 handlers:
+
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+
+- url: /sitemap.xml
+  static_files: static/sitemap.xml
+  upload: static/sitemap.xml
+
+- url: /static
+  static_dir: static
   
 - url: /stylesheets
   static_dir: stylesheets

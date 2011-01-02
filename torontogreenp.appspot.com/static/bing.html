@@ -1,0 +1,28 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  <script src="https://www.google.com/jsapi?key=ABQIAAAAL0Drg0sRWAblcMUgaY2WzBTwuEOM9n0lfxz_smBct_I-rX0PtBRDI_SGKUjhhGFw733b1LOHR_DzdA" type="text/javascript"></script>
+  <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.3"></script>
+  <script>
+    google.load("jquery", "1.4.4");
+  </script>
+  <script>
+
+    $(document).ready(function(){ 
+
+      // Bing Map
+      var b_map = new VEMap("bing_map");
+      b_map.LoadMap();
+      var shapeLayer = VEShapeLayer(); 
+      var veLayerSpec = new VEShapeSourceSpecification(VEDataType.ImportXML, "http://torontogreenp.appspot.com/generatefeed.kml", shapeLayer);
+      b_map.ImportShapeLayerData(veLayerSpec);
+
+    });
+
+  </script>
+</head>
+<body class="map">
+<div id="bing_map" ></div>
+
+</body>
+</html>

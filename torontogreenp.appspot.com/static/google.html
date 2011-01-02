@@ -1,0 +1,36 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  <script src="https://www.google.com/jsapi?key=ABQIAAAAL0Drg0sRWAblcMUgaY2WzBTwuEOM9n0lfxz_smBct_I-rX0PtBRDI_SGKUjhhGFw733b1LOHR_DzdA" type="text/javascript"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script>
+    google.load("jquery", "1.4.4");
+  </script>
+  <script>
+    $(document).ready(function(){ 
+
+      // Google Map
+      var g_map_options = {
+          zoom: 10,
+          center: new google.maps.LatLng(43.73,-79.381667),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      var g_map = new google.maps.Map(document.getElementById("google_map"), g_map_options);
+      var kml = new google.maps.KmlLayer("http://torontogreenp.appspot.com/generatefeed.kml");
+      kml.setMap(g_map);
+
+      // Bing Map
+      var b_map = new VEMap("bing_map");
+      b_map.LoadMap();
+      var shapeLayer = VEShapeLayer(); 
+      var veLayerSpec = new VEShapeSourceSpecification(VEDataType.ImportXML, "http://torontogreenp.appspot.com/generatefeed.kml", shapeLayer);
+      b_map.ImportShapeLayerData(veLayerSpec);
+
+    });
+  </script>
+</head>
+<body class="map">
+<div id="google_map" ></div>
+</body>
+</html>

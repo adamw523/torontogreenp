@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+}
+
+#google_map {
+  width: 600px;
+  height: 400px;
+}
+
+#bing_map {
+  position: relative;
+  width: 600px;
+  height: 400px;
+}
+
+iframe.map {
+  width: 600px;
+  height: 400px;
+  border: 0;
+}
+
+body.map {
+  margin: 0px; 
+  padding: 0px;
+}

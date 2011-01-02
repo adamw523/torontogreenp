@@ -29,7 +29,7 @@ from django.utils import simplejson as json
 
 class MainHandler(webapp.RequestHandler):
   def get(self):
-    self.response.out.write(template.render("views/index.html", {}))
+    pass
 
 
 class HandlerWithData(webapp.RequestHandler):

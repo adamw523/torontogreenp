@@ -1,0 +1,70 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  <script src="https://www.google.com/jsapi?key=ABQIAAAAL0Drg0sRWAblcMUgaY2WzBTwuEOM9n0lfxz_smBct_I-rX0PtBRDI_SGKUjhhGFw733b1LOHR_DzdA" type="text/javascript"></script>
+</head>
+<body>
+
+  <h1>
+    Toronto Green P Locations
+  </h1>
+  <p>
+    Data scraper: <a href="http://scraperwiki.com/scrapers/greenp_carparks/">http://scraperwiki.com/scrapers/greenp_carparks/</a>
+  </p>
+  <p>
+    Source for this site: <a href="https://github.com/adamw523/torontogreenp">https://github.com/adamw523/torontogreenp</a>
+  </p>
+  <p>
+    <ul>
+      <li>
+        <a href="#maps.google.com">Show Green P Locations on maps.google.com</a>
+      </li>
+      <li>
+        <a href="#google">Add KML Source to Your Google Map</a>
+      </li>
+      <li>
+        <a href="#bing">Add KML Source to Your Microsoft Bing Map</a>
+      </li>
+    </ul>
+  </p>
+  This site is not affiliated with <a href="http://parking.greenp.com/">Toronto Green P Parking</a>.
+
+  <a name="maps.google.com"></a>
+  <h2>
+    Show Green P Locations on <a href="http://maps.google.com">maps.google.com</a>
+  </h2>
+  <p>
+    KML source of Toronto Green P Parking Locations: <a href="http://bit.ly/greenpTO">http://bit.ly/greenpTO</a>
+  </p>
+  <p>
+    After searching for an address on Google Maps, type "http://bit.ly/greenpTO" into the search bar on Google Maps and click "Search Maps".
+  </p>
+  <img src="http://i.imgur.com/xVsYB.png">
+
+  <a name="google"></a>
+  <h2>
+    Add KML Source to Your Google Map
+  </h2>
+  <pre>
+    var g_map = new google.maps.Map(document.getElementById("google_map"), g_map_options);
+    var kml = new google.maps.KmlLayer("http://torontogreenp.appspot.com/generatefeed.kml");
+    kml.setMap(g_map);
+  </pre>
+  <iframe class="map" src="/static/google.html"></iframe>
+
+  <a name="bing"></a>
+  <h2>
+    Add KML Source to Your Microsoft Bing Map
+  </h2>
+  <pre>
+    var b_map = new VEMap("bing_map");
+    b_map.LoadMap();
+    var shapeLayer = VEShapeLayer(); 
+    var veLayerSpec = new VEShapeSourceSpecification(VEDataType.ImportXML, "http://torontogreenp.appspot.com/generatefeed.kml", shapeLayer);
+    b_map.ImportShapeLayerData(veLayerSpec);
+  </pre>
+  <iframe class="map" src="/static/bing.html"></iframe>
+</body>
+
+</html>
+
