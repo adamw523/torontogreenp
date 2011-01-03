@@ -20,13 +20,6 @@
       var kml = new google.maps.KmlLayer("http://torontogreenp.appspot.com/generatefeed.kml");
       kml.setMap(g_map);
 
-      // Bing Map
-      var b_map = new VEMap("bing_map");
-      b_map.LoadMap();
-      var shapeLayer = VEShapeLayer(); 
-      var veLayerSpec = new VEShapeSourceSpecification(VEDataType.ImportXML, "http://torontogreenp.appspot.com/generatefeed.kml", shapeLayer);
-      b_map.ImportShapeLayerData(veLayerSpec);
-
     });
   </script>
 </head>
