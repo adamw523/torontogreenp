@@ -23,3 +23,8 @@ body.map {
   margin: 0px; 
   padding: 0px;
 }
+
+img {
+  vertical-align: top;
+  padding: 10px;
+}
